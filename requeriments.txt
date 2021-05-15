@@ -1,0 +1,6 @@
+Flask
+pmdarima
+pymongo
+dnspython
+pytest
+algorithmia
