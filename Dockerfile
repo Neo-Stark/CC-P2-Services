@@ -5,4 +5,5 @@ EXPOSE 5000
 COPY requeriments.txt /tmp
 RUN pip install -r /tmp/requeriments.txt
 WORKDIR /API
+COPY . .
 CMD [ "python", "app.py" ]
