@@ -106,4 +106,4 @@ def p72_horas_v2():
   return json.dumps(make_prediction_v1(72))
 
 if __name__ == '__main__':
-  app.run(host="0.0.0.0", debug=True)
+  app.run(host="0.0.0.0")
