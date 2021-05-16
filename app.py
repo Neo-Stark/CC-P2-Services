@@ -7,9 +7,12 @@ import Algorithmia
 import pandas as pd
 import pymongo
 from flask import Flask
+import os
 
 app = Flask(__name__)
-
+port = 5000 # dev port
+if 'PORT' in os.environ:
+  port = os.environ['PORT'] # heroku managed port
 mongo_client='mongodb+srv://neostark:T19blHfuaefxocwA@sandbox.l4kky.mongodb.net'
 
 def load_model_db(model_name, client, db, collection):
@@ -106,4 +109,4 @@ def p72_horas_v2():
   return json.dumps(make_prediction_v1(72))
 
 if __name__ == '__main__':
-  app.run(host="0.0.0.0")
+  app.run(host="0.0.0.0", port=port)
